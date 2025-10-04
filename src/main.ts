@@ -52,8 +52,8 @@ app.use(session({
     secure: process.env.NODE_ENV === 'production',
     httpOnly: true,
     maxAge: 24 * 60 * 60 * 1000, // 24 hours
-    domain: process.env.NODE_ENV === 'production' ? process.env.DOMAIN : 'localhost',
-    sameSite: process.env.NODE_ENV === 'production' ? 'strict' : 'lax',
+    // domain: process.env.NODE_ENV === 'production' ? process.env.DOMAIN : 'localhost',
+    sameSite: process.env.NODE_ENV === 'production' ? 'lax' : 'lax',
   }
 }));
 
