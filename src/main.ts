@@ -8,6 +8,8 @@ import {randomUUID} from "node:crypto";
 
 dotenv.config();
 
+console.info({Environment: process.env.NODE_ENV, Domain: process.env.DOMAIN});
+
 interface UserSession {
   user?: {
     id?: string;
