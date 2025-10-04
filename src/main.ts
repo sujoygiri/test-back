@@ -8,8 +8,6 @@ import {randomUUID} from "node:crypto";
 
 dotenv.config();
 
-console.info({Environment: process.env.NODE_ENV, Domain: process.env.DOMAIN});
-
 interface UserSession {
   user?: {
     id?: string;
@@ -34,7 +32,7 @@ redisClient.connect().catch(console.error);
 // Middleware
 app.use(express.json());
 app.use(cors({
-  origin: 'http://localhost:4200',
+  origin: 'https://test-front-production-c620.up.railway.app',
   credentials: true,
   optionsSuccessStatus: 200,
 }));
