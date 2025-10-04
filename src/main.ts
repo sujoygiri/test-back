@@ -7,6 +7,7 @@ import dotenv from 'dotenv';
 import {randomUUID} from "node:crypto";
 
 dotenv.config();
+console.info({NODE_ENV: process.env.NODE_ENV, PORT: process.env.PORT, DOMAIN: process.env.DOMAIN});
 
 interface UserSession {
   user?: {
@@ -52,7 +53,7 @@ app.use(session({
     httpOnly: true,
     maxAge: 24 * 60 * 60 * 1000, // 24 hours
     domain: process.env.NODE_ENV === 'production' ? process.env.DOMAIN : 'localhost',
-    sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax',
+    sameSite: process.env.NODE_ENV === 'production' ? 'strict' : 'lax',
   }
 }));
 
