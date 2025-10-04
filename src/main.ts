@@ -23,6 +23,7 @@ declare module 'express-session' {
 
 const app = express();
 
+app.set('trust proxy', 1); // trust first proxy
 // Redis client setup
 const redisClient = createClient({
   url: process.env.REDIS_URL || 'redis://localhost:6379'
