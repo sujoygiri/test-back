@@ -34,7 +34,7 @@ redisClient.connect().catch(console.error);
 // Middleware
 app.use(express.json());
 app.use(cors({
-  origin: 'https://test-front-production-c620.up.railway.app',
+  origin: ['https://test-front-production-c620.up.railway.app', 'https://testing-cros-cookie.netlify.app/'],
   credentials: true,
   optionsSuccessStatus: 200,
 }));
